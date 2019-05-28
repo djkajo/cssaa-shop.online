@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+
+<script type=text/javascript>
+
+function setCookie(cname,cvalue,exdays) 
+{
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  var expires = "expires=" + d.toGMTString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+
+function validate ()
+{
+	if (document.LoginForm.username.value == "")
+	{
+		alert("Username is required");
+		document.VForm.username.focus();
+		return false;
+	}
+	
+	if (document.LoginForm.username.value.length < 4)
+	{
+		alert("Username needs to have at least 4 characters");
+		document.VForm.username.focus();
+		return false;
+	}
+	
+	if (document.LoginForm.password.value == "")
+	{
+		alert("Password is required");
+		document.VForm.username.focus();
+		return false;
+	}
+	
+	
+	
+	
+}
+		
+
+</script>
+
+		<title> CSSAA </title>
+ 		<link href=css/styles.css rel=stylesheet type=text/css media=screen >	
+</head>
+
+<body>
+	
+		<div id="wrapper">
+		 
+			 <div id="top">
+
+			 	<div id="logo">
+			 	  <img src="images/transferir.png">
+			 	
+			 	</div>
+			 	<div id="titulo">
+			 		<h1>CSSAA, loja online</h1>
+			 	</div>
+		 	
+			 </div>
+			 
+			 <div id="topnav">
+			 
+				 <ul>
+			 		<li> <a href="index.html"> Home </a> </li>
+			 		<li> <a href="loja.html"> Products</a> </li>
+			 		<li> <a href="register.html"> Register </a> </li>
+			 		<li> <a href="login.html"> <h7> Login </h7> </a> </li>
+			 		<li> <a href="contacts.html"> Contacts</a> </li>
+ 			    </ul>
+			 </div>
+			 
+		 	<div class="login-page">
+		 	<div class="form">
+		 		 
+				
+				<form class="login-form" name="LoginForm">
+					<input type="text" placeholder="username" name="username" size="20" maxlength="10">
+		 			<input type="text" placeholder="password" name="password" size="20" maxlength="10">
+		 			<button onclick= "return validate()"  onsubmit=setCookie("user",username,30)> Login </button> 
+
+				</form>
+		 		<p class="message"> Not registered? <a href=register.html> Register </a> </p>
+		 		
+		 	
+				</div>
+		 	    </div>
+		 	    
+		 	    	 
+			 <div id="footer">
+				<p> &copy; Copyright 2019 CSSAA. All rights reserved. 
+			 </div>
+		 
+		</div>
+
+  	</body>
+
+</html>

@@ -1,0 +1,200 @@
+﻿<html>
+<head>
+		<title> CSSAA </title>
+ 		<link href=css/styles.css rel=stylesheet type=text/css media=screen >
+ 		<script type=text/javascript>
+ 	
+
+ 		function recalcular ()
+ 		{
+ 			if (document.loja.Q1.value > 999 || document.loja.Q2.value > 999 || document.loja.Q3.value > 999 || document.loja.Q4.value >999|| document.loja.Q5.value >999|| document.loja.Q6.value >999|| document.loja.Q7.value >999|| document.loja.Q8.value >999|| document.loja.Q9.value >999|| document.loja.Q10.value >999)
+ 			{
+ 				alert("Maximum quantity is 999");
+ 				limpar();	
+ 				return false;
+ 			}
+
+
+ 			document.loja.T1.value = 13 * document.loja.Q1.value;
+ 			document.loja.T2.value = 1 * document.loja.Q2.value;
+ 			document.loja.T3.value = 3 * document.loja.Q3.value;
+ 			document.loja.T4.value = 1 * document.loja.Q4.value;
+ 			document.loja.T5.value = 30 * document.loja.Q5.value;
+ 			document.loja.T6.value = 5 * document.loja.Q6.value;
+ 			document.loja.T7.value = 30 * document.loja.Q7.value;
+ 			document.loja.T8.value = 0.50 * document.loja.Q8.value;
+ 			document.loja.T9.value = 5 * document.loja.Q9.value;
+ 			document.loja.T10.value = 10 * document.loja.Q10.value; 		
+ 			document.loja.TT.value = parseInt (document.loja.T1.value + document.loja.T1.value9) + parseInt (document.loja.T2.value)
+ 				+ parseInt (document.loja.T3.value) + parseInt (document.loja.T4.value) + parseInt (document.loja.T5.value) + parseInt (document.loja.T6.value) + parseInt (document.loja.T7.value)
+ 				+ parseInt (document.loja.T8.value) + parseInt (document.loja.T9.value) + parseInt (document.loja.T10.value);
+ 		}
+ 		
+ 		function limpar ()
+ 		{
+ 			document.loja.Q1.value = " ";
+ 			document.loja.Q2.value = " ";
+ 			document.loja.Q3.value = " ";
+ 			document.loja.Q4.value = " ";
+ 			document.loja.Q5.value = " ";
+ 			document.loja.Q6.value = " ";
+ 			document.loja.Q7.value = " ";
+ 			document.loja.Q8.value = " ";
+ 			document.loja.Q9.value = " ";
+ 			document.loja.Q10.value = " ";
+ 			document.loja.T1.value = " ";
+ 			document.loja.T2.value = " ";
+ 			document.loja.T3.value = " ";
+ 			document.loja.T4.value = " ";
+ 			document.loja.T5.value = " ";
+ 			document.loja.T6.value = " ";
+ 			document.loja.T7.value = " ";
+ 			document.loja.T8.value = " ";
+ 			document.loja.T9.value = " ";
+ 			document.loja.T10.value = " ";
+ 			document.loja.TT.value = " ";
+ 			
+ 		}
+		</script>	
+</head>
+
+<body>	
+		
+		<div id="wrapper">
+		 
+			 <div id="top">
+
+			 	<div id="logo">
+			 	  <img src="images/transferir.png">
+			 	
+			 	</div>
+			 	<div id="titulo">
+			 		<h1>CSSAA, loja online</h1>
+			 	</div>
+		 	
+			 </div>
+			 
+			 <div id="topnav">
+			 
+				 <ul>
+			 		<li> <a href="index.html"> Home </a> </li>
+			 		<li> <a href="loja.html"> <h7> Products </h7> </a> </li>
+			 		<li> <a href="register.html"> Register</a> </li>
+			 		<li> <a href="login.html"> Login </a> </li>
+			 		<li> <a href="contacts.html"> Contacts</a> </li>
+				 </ul>
+			 </div>
+			 <div id="shop">
+			 
+		 		<div style= text-align:left>
+		 		<form name=loja>		 		
+		 		
+		 		<ul>
+		 		<li>
+		 		<h1> <b>Paper clip</b> </h1>
+		 		<p> <img src=images/rusty.jpg> </p>
+		 		<b> Price per unit: 13€</b>
+		 		<p> <b> Quantity: </b> <input type="text" name="Q1" size="5"> </p>
+		 		<b> Total amount: </b> <input type="text" name="T1" size="5" readonly> 
+		 		</li>
+		 		
+		 		<li> <p> <h1> <b>Used pen</b> </h1> </p>
+		 		<p> <img src=images/used_pen.jpg> </p> 
+		 		<b> Price per unit: 1€</b>
+		 		<p> <b> Quantity: </b> <input type="text" name="Q2" size="5"> </p>
+		 		<b> Total amount: </b> <input type="text" name="T2" size="5" readonly>
+		 		</li>
+		 		
+		 		<li> <p> <h1> <b>Borrowed ruler</b> </h1>
+		 		<img src=images/ruler.jpg>
+		 		<p> <b> Price per day: 3€</b> </p>
+		 		<p> <b> Quantity: </b> <input type="text" name="Q3" size="5"> </p>
+		 		<b> Total amount: </b> <input type="text" name="T3" size="5" readonly>
+		 		</li> 
+		 		
+		 		<li> <p> <h1> <b>Dust</b> </h1> </p>
+		 		<img src=images/dust.jpg>
+		 		<p> <b> Price per kilo: 1€</b> <p>
+		 		<p> <b> Quantity: </b> <input type="text" name="Q4" size="5"> </p>
+		 		<b> Total amount: </b> <input type="text" name="T4" size="5" readonly>
+		 		</li> 
+		 		
+		 		<li> <p> <h1> <b>Hair (washed)</b> </h1> </p>
+		 		<img src=images/hair.jpg>
+		 		<p> <b> Price per kil: 30€</b> </p>
+		 		<p> <b> Quantity: </b> <input type="text" name="Q5" size="5"> </p>
+		 		<b> Total amount: </b> <input type="text" name="T5" size="5" readonly>
+		 		</li> 
+
+		 		<li> <p> <h1> <b>One glove (left hand)</b> </h1> </p>
+		 		<img src=images/glove.jpg>
+		 		<p> <b> Price per item: 5€</b> </p>
+		 		<p> <b> Quantity: </b> <input type="text" name="Q6" size="5"> </p>
+		 		<b> Total amount: </b> <input type="text" name="T6" size="5" readonly>
+		 		</li>
+		 		</ul>
+
+				<ul>
+		 		<li> <p> <h1> <b>Coat sleeve(righ side)</b> </h1> </p>
+		 		<img src=images/images.jpg>
+		 		<p> <b> Price : 30€</b> </p>
+		 		<p> <b> Quantity: </b> <input type="text" name="Q7" size="5"> </p>
+		 		<b> Total amount: </b> <input type="text" name="T7" size="5" readonly>
+		 		</li> 
+		 		
+		 		<li> <p> <h1> <b>Nail</b> </h1> </p>
+		 		<img src=images/nail.jpg>
+		 		<p> <b> Price per item : 0,50€</b> </p>
+		 		<p> <b> Quantity: </b> <input type="text" name="Q8" size="5"> </p>
+		 		<b> Total amount: </b> <input type="text" name="T8" size="5" readonly>
+		 		</li> 
+		 		
+		 		<li><p> <h1> <b>Plant root (unknown)</b> </h1> </p>
+		 		<img src=images/root.jpg>
+		 		<p> <b> Price : 5€</b> </p>
+		 		<p> <b> Quantity: </b> <input type="text" name="Q9" size="5"> </p>
+		 		<b> Total amount: </b> <input type="text" name="T9" size="5" readonly>
+		 		</li>
+		 		
+		 
+		 		<li> <p> <h1> <b>Jar lid</b> </h1> </p>
+		 		<img src=images/lid.jpg>
+		 		<p> <b> Price : 2€</b> </p>
+		 		<p> <b> Quantity: </b> <input type="text" name="Q10" size="5"> </p>
+		 		<b> Total amount: </b> <input type="text" name="T10" size="5" readonly>
+		 		</li> 
+		 		</ul>
+		 		
+		 		<tr>
+		 		<td width="10%" align="center"></td>
+		 		<td width="30%" align="left"></td>
+		 		<td width="15%" align="center"><b> <h2> Total amount in euros: </h2> </b></td>
+		 		<td width="45%" align="center"><input type="text" STYLE="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 12px; background-color: #72A4D2;" size="10" maxlength="30" name="TT" size="10" readonly></td> 
+		 		</tr>
+		 		
+		 		<tr>
+		 		<td width="10%" align="center"></td>
+		 		<td width="30%" align="left"></td>
+		 		<td width="15%" align="center"></td>
+		 		<td width="45%" align="center">
+		 		</tr>
+		 		
+				</table>
+				
+				</form>
+				
+				<button onclick="javascript:recalcular()"> Calcular total </button>
+				<button onclick="javascript:limpar()"> Limpar todos os campos</button>		
+			</div>
+
+
+
+			 <div id="footer">
+				<p> &copy; Copyright 2019 CSSAA. All rights reserved. 
+			 </div>
+		 
+		</div>
+
+  	</body>
+
+</html>

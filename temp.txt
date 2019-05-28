@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+<script type=text/javascript>
+
+function setCookie(cname,cvalue,exdays) 
+{
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  var expires = "expires=" + d.toGMTString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+
+function Validate ()
+{
+	if (document.VForm.username.value == "" )
+	{
+		alert("Username is required");
+		document.VForm.username.focus();
+		return false;
+	}
+	
+	if (document.VForm.username.value.length < 4)
+	{
+		alert("Username needs to have at least 4 letters");
+		document.VForm.username.focus();
+		return false;
+	}
+	
+/*	 if (document.VForm.username.value != Reg2)
+	 {
+	 	alert("Username needs to start by uppercase");
+		document.VForm.username.focus();
+		return false;
+	} */
+
+	 	
+
+	
+	
+	if (document.VForm.password.value == "" )
+	{
+		alert("Password is required");
+		document.VForm.password.focus();
+		return false;
+	}
+	
+	if (document.VForm.password.value.length < 8 )
+	{
+		alert("Password needs to have at least 8 characters");
+		document.VForm.password.focus();
+		return false;
+	}
+	
+
+	if (document.VForm.RPassword.value == "" )
+	{
+		alert("Password confirmation is required");
+		document.VForm.RPassword.focus();
+		return false;
+	}
+	
+	if (document.VForm.password.value != document.VForm.RPassword.value )
+	{
+		alert("Password confirmation is different from password");
+		document.VForm.RPassword.focus();
+		return false;
+	}
+
+	if (document.VForm.email.value == "" )
+	{
+		alert("Email address is required");
+		document.VForm.email.focus();
+		return false;
+	}
+
+	if (document.VForm.name.value == "" )
+	{
+		alert("Name is required");
+		document.VForm.name.focus();
+		return false;
+	}
+
+	if (document.VForm.address.value == "" )
+	{
+		alert("Address is required");
+		document.VForm.address.focus();
+		return false;
+	}
+	
+	if (document.VForm.address.value.length < 10 )
+	{
+		alert("Address needs to have at least 10 characters");
+		document.VForm.address.focus();
+		return false;
+	}
+
+	 
+	
+	
+}
+		
+
+</script>
+
+		<title> CSSAA </title>
+ 		<link href=css/styles.css rel=stylesheet type=text/css media=screen >	
+</head>
+
+<body>
+	
+		<div id="wrapper">
+		 
+			 <div id="top">
+
+			 	<div id="logo">
+			 	  <img src="images/transferir.png">
+			 	
+			 	</div>
+			 	<div id="titulo">
+			 		<h1>CSSAA, loja online</h1>
+			 	</div>
+		 	
+			 </div>
+			 
+			 <div id="topnav">
+			 
+				 <ul>
+			 		<li> <a href="index.html"> Home </a> </li>
+			 		<li> <a href="loja.html"> Products</a> </li>
+			 		<li> <a href="register.html"> <h7> Register </h7> </a> </li>
+			 		<li> <a href="login2.html"> Login </a> </li>
+			 		<li> <a href="contacts.html"> Contacts</a> </li>
+ 			    </ul>
+			 </div>
+			 
+		 	<div class="login-page">
+		 	<div class="form">
+		 		<form class="register-form" onsubmit="return Validate()" name="VForm">
+		 			<input type="text" placeholder="username" name="username" size="20" maxlength="10">
+		 			<input type="text" placeholder="password" name="password" size="20" maxlength="10">
+		 			<input type="text" placeholder="confirm password" name="RPassword" size="20" maxlength="10">
+		 			<input type="text" placeholder="email" id = "idemail" name="email" size="20" maxlength="15">
+		 		    <input type="text" placeholder="name" name="name" size="20" maxlength="30">
+		 			<input type="text" placeholder="address" name="address" size="20" maxlength="30">
+		 			<button> Register </button>
+		 		<p class="message"> Already registered? <a href="#"> Login </a> </p>
+		 		</form>	 
+				
+				<form class="login-form" name="LoginForm">
+					<input type="text" placeholder="username" name="username" size="20" maxlength="10">
+		 			<input type="text" placeholder="password" name="password" size="20" maxlength="10">
+		 			<button onclick= "javascript:setCookie (user,username,30);"> Login </button> 
+
+		 		<p class="message"> Not registered? <a href="#"> Register </a> </p>
+		 		</form>
+		 	
+				</div>
+		 	    </div>
+		 	    
+		 	    <script src='https://code.jquery.com/jquery-3.2.1.min.js'>
+		 	    </script>
+		 	    
+		 	    <script>
+		 	    $('.message a').click(function()
+		 	    {
+		 	    	$('form').animate ({height: "toggle", opacity: "toggle"}, "slow");
+		 	    });
+		 	    </script>				
+		 	    
+					 	    
+		 			 	
+			 		 
+			 <div id="footer">
+				<p> &copy; Copyright 2019 CSSAA. All rights reserved. 
+			 </div>
+		 
+		</div>
+
+  	</body>
+
+</html>

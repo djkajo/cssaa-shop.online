@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+		<title> CSSAA </title>
+ 		<link href=css/styles.css rel=stylesheet type=text/css media=screen >
+ 		<script type=text/javascript>
+ 		
+var RegUser = new RegExp("[A-Z][a-z]+");
+var RegEmail = new RegExp("[a-z0-9]{1,30}@[a-z]{1,20}.[a-z]{2}");
+var RegPass = new RegExp("^(?=.*?[A-Z])(?=(.*[a-z]){1,})(?=(.*[\d]){1,})(?=(.*[\W]){1,})(?!.*\s).{8,}$");
+ 		
+function validate ()
+{
+	if (document.VForm.username.value == "")
+	{
+		alert("Username is required");
+		document.VForm.username.focus();
+		return false;
+	}
+	
+	if (document.VForm.username.value.length < 4)
+	{
+		alert("Username needs to have at least 4 letters");
+		document.VForm.username.focus();
+		return false;
+	}
+	
+	if (RegUser.test(document.VForm.username.value) == false)
+	{
+	 	alert("Username needs to start by uppercase");
+		document.VForm.username.focus();
+		return false;
+	}
+	 
+		
+	if (document.VForm.password.value == "" )
+	{
+		alert("Password is required");
+		document.VForm.password.focus();
+		return false;
+	}
+	
+	if (document.VForm.password.value.length < 8 )
+	{
+		alert("Password needs to have at least 8 characters");
+		document.VForm.password.focus();
+		return false;
+	}
+	
+	if (RegPass.test(document.VForm.password.value) == false)
+	{
+	 	alert("Password in incorrect form, needs to have at least 8 characters, one special character, one uppercase and four numbers ");
+		document.VForm.password.focus();
+		return false;
+	}
+
+		
+	
+
+	if (document.VForm.RPassword.value == "" )
+	{
+		alert("Password confirmation is required");
+		document.VForm.RPassword.focus();
+		return false;
+	}
+	
+	if (document.VForm.password.value != document.VForm.RPassword.value )
+	{
+		alert("Password confirmation is different from password");
+		document.VForm.RPassword.focus();
+		return false;
+	}
+
+	if (document.VForm.email.value == "" )
+	{
+		alert("Email address is required");
+		document.VForm.email.focus();
+		return false;
+	}
+	
+	
+	if (RegEmail.test(document.VForm.email.value) == false)
+	{
+	 	alert("Email in incorrect form");
+		document.VForm.email.focus();
+		return false;
+	}
+	
+
+	if (document.VForm.name.value == "" )
+	{
+		alert("Name is required");
+		document.VForm.name.focus();
+		return false;
+	}
+
+	if (document.VForm.address.value == "" )
+	{
+		alert("Address is required");
+		document.VForm.address.focus();
+		return false;
+	}
+	
+	if (document.VForm.address.value.length < 10 )
+	{
+		alert("Address needs to have at least 10 characters");
+		document.VForm.address.focus();
+		return false;
+	}
+
+	 
+	
+	
+}
+		
+
+</script>
+
+</head>
+
+<body>
+	
+		<div id="wrapper">
+		 
+			 <div id="top">
+
+			 	<div id="logo">
+			 	  <img src="images/transferir.png">
+			 	
+			 	</div>
+			 	<div id="titulo">
+			 		<h1>CSSAA, loja online</h1>
+			 	</div>
+		 	
+			 </div>
+			 
+			 <div id="topnav">
+			 
+				 <ul>
+			 		<li> <a href="index.html"> Home </a> </li>
+			 		<li> <a href="loja.html"> Products</a> </li>
+			 		<li> <a href="register.html"> <h7> Register </h7> </a> </li>
+			 		<li> <a href="login.html"> Login </a> </li>
+			 		<li> <a href="contacts.html"> Contacts</a> </li>
+ 			    </ul>
+			 </div>
+			 
+		 	<div class="login-page">
+		 	<div class="form">
+		 		<form class="register-form" name="VForm">
+		 			<input type="text" placeholder="username" id=username name="username" size="20" maxlength="10">
+		 			<input type="text" placeholder="password" name="password" size="20" maxlength="20">
+		 			<input type="text" placeholder="confirm password" name="RPassword" size="20" maxlength="20">
+		 			<input type="text" placeholder="email" id = "idemail" name="email" size="20" maxlength="50">
+		 		    <input type="text" placeholder="name" name="name" size="20" maxlength="30">
+		 			<input type="text" placeholder="address" name="address" size="20" maxlength="30">
+		 			
+		 		</form>
+		 		<button onclick="return validate();"> Register </button>
+		 		<p class="message"> Already registered? <a href=login.html> Login </a> </p> 		 	
+				</div>
+		 	    </div>
+			 		 
+			 <div id="footer">
+				<p> &copy; Copyright 2019 CSSAA. All rights reserved. 
+			 </div>
+		 
+		</div>
+
+  	</body>
+
+</html>
